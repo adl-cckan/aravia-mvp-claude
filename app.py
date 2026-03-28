@@ -2,11 +2,10 @@ import streamlit as st
 import anthropic
 from PIL import Image
 import base64
-from io import BytesIO
 
 st.set_page_config(page_title="Aravia MVP – Claude 版", page_icon="🏛️", layout="wide")
 st.title("🏛️ Aravia Knowledge Platform")
-st.caption("CHAN Ching Kan 20年建築知識 + 2024 CUHK PhD 驅動 | Claude 版（深度加強）")
+st.caption("CHAN Ching Kan 20年建築知識 + 2024 CUHK PhD 驅動 | Claude 深度版")
 
 client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
 
@@ -33,9 +32,8 @@ CRITIC_PROMPT = """你係 Kan Critic。
 用 Cantonese + English 回答，答案必須詳細豐富。"""
 
 with st.sidebar:
-    st.success("✅ Claude 版已連接成功！")
-    st.write("• 深度加強版")
-    st.caption("Claude 專屬 · 引用 PhD 更準")
+    st.success("✅ Claude 深度版已連接成功！")
+    st.caption("深度更接近之前 Project")
 
 tab1, tab2 = st.tabs(["📖 Kan Explainer（論文解釋）", "🔍 Kan Critic（設計批判）"])
 
@@ -81,4 +79,4 @@ with tab2:
             if uploaded_file.type.startswith("image"):
                 st.image(uploaded_file, caption="你上傳的設計圖")
 
-st.caption("Claude 版 MVP | 深度更接近之前 Project")
+st.caption("Claude 深度版 MVP | 由零開始全新建立")
